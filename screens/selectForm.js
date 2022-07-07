@@ -1,22 +1,22 @@
 import React from "react";
 import {StyleSheet,Text,View,Image,TouchableOpacity} from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
-import vendorLogin from './vendorLogin'
-import userLogin from './userLogin'
+import VendorLogin from './VendorLogin'
+import UserLogin from './UserLogin'
  
-const selectFrom = ({navigation}) => {
+const SelectFrom = ({navigation}) => {
   return (
     <View style={styles.container}>
-      {/* <Image style={styles.image} source={require("../Assets/RecommendusLogo.jpeg")} /> */}
-
+      <Image style={styles.image} source={require("../Assets/RecommendusLogo.jpeg")} />
+    
       <TouchableOpacity onPress={() =>{
-        navigation.navigate(vendorLogin)
+        navigation.navigate(VendorLogin)
       }} style={styles.loginBtn}>
         <Text style={styles.loginText}>As a Vendor</Text>
       </TouchableOpacity>
       
       <TouchableOpacity onPress={() =>{
-        navigation.navigate(userLogin)
+        navigation.navigate(UserLogin)
       }} style={styles.loginBtn}>
         <Text style={styles.loginText}>As a User</Text>
       </TouchableOpacity>
@@ -52,4 +52,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default selectFrom;
+export default SelectFrom;

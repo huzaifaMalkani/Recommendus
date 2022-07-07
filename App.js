@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import {StyleSheet,Text,View,Image,TextInput,Button,TouchableOpacity,ScrollView} from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import selectFrom from "./screens/selectForm";
+import SelectFrom from "./screens/SelectForm";
+import VendorLogin from "./screens/VendorLogin";
+import UserLogin from "./screens/UserLogin";
+import UserSignup from './screens/UserSignup'
+import VendorSignup from './screens/VendorSignup'
 
 // const homeScreen = () => {
 //   return(
@@ -26,9 +30,11 @@ const App = () =>{
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name = 'Home' component={selectFrom} />
-        <Stack.Screen name = 'vendorLogin' component={VendorLogin}/>
-        <Stack.Screen name = 'userLogin' component={userLogin}/>
+        <Stack.Screen name = 'Home' component={SelectFrom} />
+        <Stack.Screen name = 'VendorLogin' component={VendorLogin}/>
+        <Stack.Screen name = 'UserLogin' component={UserLogin}/>
+        <Stack.Screen name = 'UserSignup' component={UserSignup}/>
+        <Stack.Screen name = 'VendorSignup' component={VendorSignup}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

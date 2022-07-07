@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import {StyleSheet,Text,View,Image,TextInput,TouchableOpacity,} from "react-native";
 import { NavigationContainer } from '@react-navigation/native'; 
+import UserSignup from './UserSignup'
 
-const userLogin = ({navigation}) => 
-{
+const UserLogin = ({navigation}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
  
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require(".")} />
+      <Image style={styles.image} source={require("../Assets/RecommendusLogo.jpeg")} />
       <Text style={styles.text}> User </Text>
 
       <View style={styles.inputView1}>
@@ -38,8 +38,9 @@ const userLogin = ({navigation}) =>
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
-        <Text style={styles.signup_button}>Not a member? Signup now </Text>
+      <TouchableOpacity onPress={() =>{
+        navigation.navigate(UserSignup)}}>
+      <Text style={styles.signup_button}>Not a member? Signup now </Text>
       </TouchableOpacity>
     </View>
   );
@@ -113,4 +114,4 @@ const styles = StyleSheet.create({
     color: "#F0A082",
   }
 });
-export default userLogin;
+export default UserLogin;

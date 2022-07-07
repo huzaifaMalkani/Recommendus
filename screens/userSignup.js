@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import {StyleSheet,Text,View,Image,TextInput,TouchableOpacity,ScrollView} from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
+import UserLogin from './UserLogin'
 
-const userSignup = () => {
+const UserSignup = ({navigation}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -10,10 +11,9 @@ const userSignup = () => {
   const [phoneNumber, setphoneNumber] = useState("");
 
   return (
-    <NavigationContainer>
     <ScrollView>
     <View style={styles.container}>
-      <Image style={styles.image} source={require("./Assets/RecommendusLogo.jpeg")} />
+      <Image style={styles.image} source={require("../Assets/RecommendusLogo.jpeg")} />
       <Text style={styles.text}> User </Text>
      
       <View>
@@ -71,12 +71,12 @@ const userSignup = () => {
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>Sign Up</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() =>{
+        navigation.navigate(UserLogin)}}>
         <Text style={styles.signup_button}>Already Member? Login now </Text>
       </TouchableOpacity>
     </View>
     </ScrollView>
-    </NavigationContainer>
   );
 }
  
@@ -136,4 +136,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default userSignup;
+export default UserSignup;

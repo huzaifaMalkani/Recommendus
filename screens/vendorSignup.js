@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import {StyleSheet,Text,View,Image,TextInput,TouchableOpacity,ScrollView} from "react-native";
 import { NavigationContainer } from '@react-navigation/native'; 
+import VendorLogin from './VendorLogin'
 
-const vendorSignup = () =>{
+const VendorSignup = ({navigation}) =>{
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -92,7 +93,8 @@ const vendorSignup = () =>{
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>Sign Up</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() =>{
+        navigation.navigate(VendorLogin)}}>
         <Text style={styles.signup_button}>Already Member? Login now </Text>
       </TouchableOpacity>
     </View>
@@ -158,4 +160,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default vendorSignup;
+export default VendorSignup;
